@@ -28,7 +28,7 @@ public class RentController {
 
     @GetMapping("/search-by-id/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public Rental getrentalById(@PathVariable Integer id){
+    public Rental getRentalById(@PathVariable Integer id){
         return service.searchRentalById(id);
     }
 

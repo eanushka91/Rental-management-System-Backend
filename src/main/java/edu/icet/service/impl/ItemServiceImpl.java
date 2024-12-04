@@ -1,9 +1,7 @@
 package edu.icet.service.impl;
 
 import edu.icet.dto.Item;
-import edu.icet.dto.Rental;
 import edu.icet.entity.ItemEntity;
-import edu.icet.entity.RentalEntity;
 import edu.icet.repository.ItemRepository;
 import edu.icet.service.ItemService;
 import lombok.RequiredArgsConstructor;

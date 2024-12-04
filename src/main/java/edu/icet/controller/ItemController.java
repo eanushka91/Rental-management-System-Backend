@@ -1,9 +1,7 @@
 package edu.icet.controller;
 
 import edu.icet.dto.Item;
-import edu.icet.dto.Rental;
 import edu.icet.service.ItemService;
-import edu.icet.service.RentalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +28,7 @@ public class ItemController {
 
     @GetMapping("/search-by-id/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public Item getitemById(@PathVariable Integer id){
+    public Item getItemById(@PathVariable Integer id){
         return service.searchItemById(id);
     }
 

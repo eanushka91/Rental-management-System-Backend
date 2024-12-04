@@ -1,7 +1,6 @@
 package edu.icet.service;
 
 import edu.icet.dto.Item;
-import edu.icet.dto.Rental;
 
 import java.util.List;
 
