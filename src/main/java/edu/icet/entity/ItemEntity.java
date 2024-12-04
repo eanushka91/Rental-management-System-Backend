@@ -11,13 +11,13 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "rental")
-public class RentalEntity {
+@Table(name = "item")
+public class ItemEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer rentalid;
-    private String rentaldate;
-    private String returndate;
-    private String duedate;
-    private String totalcost;
+    private Integer itemid;
+    private String itemname;
+    private String rentalperday;
+    private String fineperday;
+    private String availability;
 }

@@ -9,10 +9,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Rental {
-    private Integer rentalid;
-    private String rentaldate;
-    private String returndate;
-    private String duedate;
-    private String totalcost;
+public class Item {
+    private Integer itemid;
+    private String itemname;
+    private String rentalperday;
+    private String fineperday;
+    private String availability;
 }
