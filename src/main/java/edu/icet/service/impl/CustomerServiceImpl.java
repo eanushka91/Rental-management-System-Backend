@@ -1,5 +1,6 @@
 package edu.icet.service.impl;
 
+import edu.icet.config.SecurityConfig;
 import edu.icet.dto.Customer;
 import edu.icet.entity.CustomerEntity;
 import edu.icet.repository.CustomerRepository;
@@ -46,11 +47,24 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer login(String email, String password) {
-        return null;
-    }
+        CustomerEntity customerEntity = repository.findByEmail(email);
 
+        if(customerEntity == null) {
+            throw new RuntimeException("Could not found");
+        }
+
+        if(!SecurityConfig.verifyPassword(password, customerEntity.getPassword())){
+            throw new RuntimeException("Password not matched");
+        }
+
+        return mapper.map(customerEntity, Customer.class);
+
+    }
     @Override
     public Customer register(Customer customer) {
-        return null;
+        customer.setPassword(SecurityConfig.hashPassword(customer.getPassword()));
+        CustomerEntity userEntity = repository.save(mapper.map(customer, CustomerEntity.class));
+        return mapper.map(userEntity, Customer.class);
     }
+
 }

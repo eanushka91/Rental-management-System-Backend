@@ -43,4 +43,13 @@ public class CustomerController {
     public void updateCustomer(@RequestBody Customer customer){
         service.updateCustomerById(customer);
     }
+    @PostMapping("/login")
+    public Customer login(@RequestBody Customer customer){
+        return service.login(customer.getEmail(), customer.getPassword());
+    }
+
+    @PostMapping("/register")
+    public Customer register(@RequestBody Customer customer){
+        return service.register(customer);
+    }
 }
